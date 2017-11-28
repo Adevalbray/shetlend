@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'shets/index'
+
   root to: 'pages#home'
 
   devise_for :users
