@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 has_many :shetlands
 has_many :reservations
+  mount_uploader :photo, PhotoUploader
 end
