@@ -92,7 +92,7 @@ shetlands_attributes = [
     name: "Ursule",
     price_per_hour: 24,
     age: 6,
-    description: "Magnifique jument douce voire divine, elle a très peur des enfants et autres créatures sauvages. A manier avec précaution en balade extérieure",
+    description: "Magnifique jument douce voire divine, elle a très peur des enfants et autres créatures sauvages.",
     location: "Mongolie",
     remote_photo_url: "http://res.cloudinary.com/dg5e0d3zq/image/upload/v1511863341/shet1_hido5b.jpg"
   },

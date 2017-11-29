@@ -1,6 +1,12 @@
-.container {
-  margin: 0 auto;
-  max-width: 900px;
+// .container {
+//   margin: 0 auto;
+//   max-width: 900px;
+// }
+
+.card {
+  // background-color: black;
+  // height: 600px;
+  margin-bottom: 3em;
 }
 
 .card-header {
@@ -11,11 +17,17 @@
   position: relative;
 }
 
+.card-description {
+  padding: 1em;
+}
+
+.card-description-owner {
+  margin-bottom: 1em;
+}
+
 .basic-info {
   position: absolute;
   bottom: 10px
-
-
 }
 
 #location {
@@ -32,6 +44,9 @@
   background: #e74c3c;
   width: 55px;
   height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 12.5px 0;
   border-radius: 100%;
   color: #FFFFFF;
@@ -40,7 +55,7 @@
 }
 
 .card-user {
-  display: block;
+  // display: block;
   width: 50px;
   border-radius: 50%;
 }
@@ -48,3 +63,11 @@
 .row-text {
   padding: 10px;
 }
+
+
+.card-see-more {
+  text-align: center;
+}
+
+
+
