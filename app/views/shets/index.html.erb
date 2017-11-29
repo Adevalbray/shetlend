@@ -1,32 +1,40 @@
-<div>
+<div class="container">
   <h1>The Shetlands available below </h1>
-</div>
-
-<div class=“container”>
-    <h2 class=“text-center”> Which one will be your shet for a day? </h2>
-      <% @shetlands.each do |shetland| %>
-      <div class="cards">
-        <div class="card col-xs-12 col-sm-4">
+  <h2 class="text-center"> Which one will be your shet for a day? </h2>
+  <div class="row">
+    <% @shetlands.each do |shetland| %>
+      <!-- <div class="cards"> -->
+        <div class="col-xs-12 col-sm-4">
+          <div class="card">
             <div class="card-header" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path shetland.photo, height: 300, width: 400, crop: :fill %>')">
-            <div class="row-text">
-              <div class="price">
-                <%= shetland.price_per_hour %>€</div>
+              <div class="row-text">
+                <div class="price">
+                  <span><%= shetland.price_per_hour %>€</span>
+                </div>
                 <div class="basic-info">
                   <h3><%= shetland.name %></h3>
+                  <p><%= shetland.age %> ans</p>
                   <div class="row-location">
-                    <p><i class="fa fa-map-marker" aria-hidden="true"></i>  <%= shetland.location %></p>
+                    <p>
+                      <i class="fa fa-map-marker" aria-hidden="true"></i>  <%= shetland.location %>
+                    </p>
                   </div>
                 </div>
               </div>
+            </div>
+            <div class="card-description">
+              <div class="card-description-owner">
+                <img class="card-user" src="<%= image_path shetland.user.photo %>">
+                <%= shetland.user.first_name.capitalize %>
+              </div>
+              <p><%= shetland.description %></p>
+            </div>
+            <div class="card-see-more">
+              <%= link_to 'See more', shet_path(shetland), class: "btn btn-danger" %>
+            </div>
           </div>
-          <div class="card-description">
-            <img class="card-user" src="<%= image_path shetland.user.photo %>">
-            <p><%= shetland.user.first_name.capitalize %></p>
-            <p><%= shetland.age %> ans</p>
-            <p><%= shetland.description %></p>
-          </div>
-          <%= link_to 'See more', shet_path(shetland), class: "btn btn-danger" %>
         </div>
-      </div>
-       <% end %>
-    </div>
+      <!-- </div> -->
+    <% end %>
+  </div>
+</div>
