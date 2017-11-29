@@ -7,13 +7,14 @@
 </head>
 
 <body>
-  <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://kitt.lewagon.com/placeholder/cities/berlin');">
+  <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.4) 0%, rgba(0,36,61,0.4) 50%), url('http://res.cloudinary.com/dqsyulth5/image/upload/v1511894934/18485933_1498167173567501_4254566172561738638_n_erpeis.jpg');">
+
     <div class="banner-content">
       <h1>Shetlend</h1>
       <p>Loue ton poney à l'heure!</p>
 
-      <div class="container">
-  <div class="row">
+  <div class="container">
+      <div class="row">
         <div class="col-sm-6 col-sm-offset-3">
             <div id="imaginary_container">
                 <div class="input-group stylish-input-group">
@@ -32,53 +33,27 @@
   </div>
 
   <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
-            <div class="card-category">Popular</div>
-            <div class="card-description">
-              <h2>PonyBabe</h2>
-              <p>Very cool city, the best</p>
-            </div>
-            <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
-            <a class="card-link" href="#" ></a>
+    <h2 class="text-center">Latest availibilities</h2>
+      <% @shetlands.each do |shetland| %>
+        <div class="card col-xs-12 col-sm-4">
+          <div class="card-header" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path shetland.photo, height: 300, width: 400, crop: :fill %>')">
+            <div class="row-text">
+              <h3><%= shetland.name %></h3>
+              <p><%= shetland.price_per_hour %>€ per hour</p>
+              <p><%= shetland.location %></p>
+              </div>
           </div>
-        </div>
-        <div class="col-xs-12 col-sm-4">
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
-            <div class="card-category">Popular</div>
-            <div class="card-description">
-              <h2>Puduc</h2>
-              <p>Very cool city, the best</p>
-            </div>
-            <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
-            <a class="card-link" href="#" ></a>
+          <div class="card-description">
+            <img class="card-user" src="<%= image_path shetland.user.photo %>">
+            <p><%= shetland.user.first_name.capitalize %></p>
+            <p><%= shetland.age %> ans</p>
+            <p><%= shetland.description %></p>
           </div>
+          <a class="card-link" href="#" >See more</a>
         </div>
-        <div class="col-xs-12 col-sm-4">
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
-  <div class="card-category">Popular</div>
-  <div class="card-description">
-    <h2>Satan</h2>
-    <p>Very cool city, the best</p>
-  </div>
-  <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
-  <a class="card-link" href="#" ></a>
-</div>
-          </div>
-        </div>
-      </div>
+       <% end %>
+    </div>
 
-
-<div class="footer">
-  <div class="footer-links">
-    <a href="#"><i class="fa fa-github"></i></a>
-    <a href="#"><i class="fa fa-instagram"></i></a>
-    <a href="#"><i class="fa fa-facebook"></i></a>
-    <a href="#"><i class="fa fa-twitter"></i></a>
-    <a href="#"><i class="fa fa-linkedin"></i></a>
-  </div>
-</div>
 
 
     </body>

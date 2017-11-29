@@ -13,9 +13,18 @@ User.destroy_all
 
 
 puts 'Creating users...'
-clarisse = User.create!(first_name: "clarisse", last_name: "Faure", email: "cla@gmail.com", password: "123456")
-arnaud = User.create!(first_name: "arnaud", last_name: "de valbray", email: "arno@gmail.com", password: "123456")
-marie = User.create!(first_name: "marie", last_name: "blaise", email: "marie@gmail.com", password: "123456")
+clarisse = User.create!(
+  first_name: "clarisse", last_name: "Faure", email: "cla@gmail.com", password: "123456",
+  remote_photo_url: "https://kitt.lewagon.com/placeholder/users/ClarisseF"
+)
+arnaud = User.create!(
+  first_name: "arnaud", last_name: "de valbray", email: "arno@gmail.com", password: "123456",
+  remote_photo_url: "https://kitt.lewagon.com/placeholder/users/Adevalbray"
+)
+marie = User.create!(
+  first_name: "marie", last_name: "blaise", email: "marie@gmail.com", password: "123456",
+  remote_photo_url: "https://kitt.lewagon.com/placeholder/users/MBDIA"
+)
 
 puts 'Creating shetlands...'
 shetlands_attributes = [
