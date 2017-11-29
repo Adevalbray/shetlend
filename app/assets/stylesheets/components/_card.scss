@@ -8,10 +8,39 @@
   background-size: cover !important;
   background-position: center;
   color: white;
+  position: relative;
 }
 
+.basic-info {
+  position: absolute;
+  bottom: 10px
+
+
+}
+
+#location {
+  color: #e74c3c;
+  border: 1px solid red;
+  padding: 3px
+
+}
+.price {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1;
+  background: #e74c3c;
+  width: 55px;
+  height: 55px;
+  padding: 12.5px 0;
+  border-radius: 100%;
+  color: #FFFFFF;
+  font-weight: 700;
+  text-align: center;
+}
 
 .card-user {
+  display: block;
   width: 50px;
   border-radius: 50%;
 }
