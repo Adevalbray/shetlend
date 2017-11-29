@@ -1,20 +1,32 @@
-<h1>The Shetlands available below </h1>
-
-<ul>
-  <% @shetlands.each do |shetland| %>
-
-   <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
-  <div class="card-category">Shetland</div>
-  <div class="card-description">
-    <h2><%= shetland.name %></h2>
-    <p><%= shetland.price_per_hour %>€ per hour</p>
-    <p><%= shetland.user.first_name.capitalize %></p>
-    <p><%= shetland.age %></p>
-    <p><%= shetland.description %></p>
-    <p><%= shetland.location %></p>
-  </div>
-  <a class="card-link" href="#" ></a>
+<div>
+  <h1>The Shetlands available below </h1>
 </div>
-<% end %>
-</ul>
 
+<div class=“container”>
+    <h2 class=“text-center”> Which one will be your shet for a day? </h2>
+      <% @shetlands.each do |shetland| %>
+      <div class="cards">
+        <div class="card col-xs-12 col-sm-4">
+            <div class="card-header" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path shetland.photo, height: 300, width: 400, crop: :fill %>')">
+            <div class="row-text">
+              <div class="price">
+                <%= shetland.price_per_hour %>€</div>
+                <div class="basic-info">
+                  <h3><%= shetland.name %></h3>
+                  <div class="row-location">
+                    <p><i class="fa fa-map-marker" aria-hidden="true"></i>  <%= shetland.location %></p>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div class="card-description">
+            <img class="card-user" src="<%= image_path shetland.user.photo %>">
+            <p><%= shetland.user.first_name.capitalize %></p>
+            <p><%= shetland.age %> ans</p>
+            <p><%= shetland.description %></p>
+          </div>
+          <%= link_to 'See more', shet_path(shetland), class: "btn btn-danger" %>
+        </div>
+      </div>
+       <% end %>
+    </div>
