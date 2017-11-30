@@ -1,7 +1,9 @@
+<div>
+  <h1>Your reservation for <%= @shetland.name %></h1>
+</div>
 <div class="container">
   <div class="row">
-    <div class="col-xs-8">
-        <h1> <%= @shetland.name %> </h1>
+    <div class="col-xs-8 col-sm-6 ">
         <%= image_tag @shetland.photo %>
         <br>
         <h2><%= @shetland.location %></h2>
@@ -10,7 +12,7 @@
         <br>
         <%= @shetland.price_per_hour %> € / heure
         <br>
-        <%= link_to "Réservez", new_shet_reservation_path(@shetland), class: "btn btn-danger" %>
+        <%= link_to "Return to see all the Shets", shet_path(@shetland), class: "btn btn-danger" %>
     </div>
 
     <div class="col-xs-4">
@@ -22,3 +24,5 @@
     </div>
   </div>
 </div>
+
+
