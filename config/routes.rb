@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  get 'reservations/index'
+
+  get 'reservations/new'
+
+  get 'reservations/create'
+
+  get 'reservations/update'
+
+  get 'reservations/destroy'
+
   get 'shets/index'
 
   root to: 'pages#home'

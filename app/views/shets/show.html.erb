@@ -10,7 +10,7 @@
         <br>
         <%= @shetland.price_per_hour %> € / heure
         <br>
-        <%= link_to "Réservez", "/reservation.html", class: "btn btn-danger" %>
+        <%= link_to "Réservez", new_shet_reservation_path(@shetland), class: "btn btn-danger" %>
     </div>
 
     <div class="col-xs-4">
