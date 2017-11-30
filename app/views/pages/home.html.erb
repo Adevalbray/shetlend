@@ -36,7 +36,7 @@
 <br>
 
 
- <%= link_to 'Show me all the shets!', shets_index_path, class: "btn btn-danger" %>
+ <%= link_to 'Show me all the shets!', shets_path, class: "btn btn-danger" %>
  <%= link_to 'I want to lend my shet!', new_my_shet_path, class: "btn btn-danger" %>
 
 
@@ -51,7 +51,12 @@
       <!-- <div class="cards"> -->
         <div class="col-xs-12 col-sm-4">
           <div class="card">
-            <div class="card-header" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path shetland.photo, height: 300, width: 400, crop: :fill %>')">
+            <% if shetland.photo.url.nil? %>
+              <% photo_path = 'http://res.cloudinary.com/doitabroad/image/upload/v1511967450/logo_ttcvyk.jpg' %>
+            <% else %>
+              <% photo_path = cl_image_path shetland.photo, height: 300, width: 400, crop: :fill %>
+            <% end %>
+            <div class="card-header" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= photo_path %>')">
               <div class="row-text">
                 <div class="price">
                   <span><%= shetland.price_per_hour %>€</span>
