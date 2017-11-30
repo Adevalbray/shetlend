@@ -26,11 +26,10 @@
               <div class="card-description-owner">
                 <img class="card-user" src="<%= image_path shetland.user.photo %>">
                 <%= shetland.user.first_name.capitalize %>
-              </div>
-              <p><%= shetland.description %></p>
-            </div>
-            <div class="card-see-more">
+                <div class="card-see-more">
               <%= link_to 'See more', shet_path(shetland), class: "btn btn-danger" %>
+              </div>
+            </div>
             </div>
           </div>
         </div>
@@ -38,3 +37,4 @@
     <% end %>
   </div>
 </div>
+

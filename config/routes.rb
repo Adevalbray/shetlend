@@ -1,12 +1,10 @@
 Rails.application.routes.draw do
-  get 'shets/index'
-
   root to: 'pages#home'
 
   devise_for :users
 
   resources :shets, only: [:index, :show] do
-    resources :reservations, only: [:new, :create] # as renter
+    resources :reservations, only: [:create] # as renter
   end
 
   resources :reservations, only: [:index] # as renter

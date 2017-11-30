@@ -4,18 +4,19 @@ class ShetsController < ApplicationController
   end
 
   def show
+    @reservation = Reservation.new
     @shetland = Shetland.find(params[:id])
   end
 
   # def new
-  #   @cocktail = Cocktail.new
+  #   @shetland = Shetland.new
   # end
 
   # def create
-  #   @cocktail = Cocktail.new(cocktail_params)
+  #   @shetland = Shetland.new(shetland_params)
 
-  #   if @cocktail.save
-  #     redirect_to cocktail_path(@cocktail)
+  #   if @shetland.save
+  #     redirect_to shetland_path(@shetland)
   #   else
   #     render :new
   #   end
