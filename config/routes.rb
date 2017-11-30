@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   resources :reservations, only: [:index] # as renter
 
-  resources :myshets, only: [:index, :show, :new, :create] # as owner
+  resources :my_shets, only: [:index, :show, :new, :create] # as owner
 
   resources :requests, only: [] do # as owner that received reservations (aka requests)
     member do
