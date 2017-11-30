@@ -1,0 +1,44 @@
+<div class="container">
+  <center><h1>My list of reservations</h1></center>
+  <div class="row">
+    <% @reservations.each do |reservation| %>
+    <div class="col-xs-12 col-sm-4">
+      <!-- <div class="cards"> -->
+        <br>
+          <div class="card">
+            <div class="order-status">
+              <p class="recap">Récapitulatif de la location</p>
+              <p class="status-pending"> <%= reservation.status %></p>
+              <p>Prix:</p>
+              <p>Durée: <%= reservation.duration %> heures</p>
+            </div>
+            <div class="card-header" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path reservation.shetland.photo, height: 300, width: 400, crop: :fill %>')">
+              <div class="row-text">
+                <div class="price">
+                  <span><%= reservation.shetland.price_per_hour %>€</span>
+                </div>
+                <div class="basic-info">
+                  <h3><%= reservation.shetland.name %></h3>
+                  <p><%= reservation.shetland.age %> ans</p>
+
+                  <div class="row-location">
+                    <p>
+                      <i class="fa fa-map-marker" aria-hidden="true"></i>  <%= reservation.shetland.location %>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-description">
+              <div class="card-description-owner">
+                <img class="card-user" src="<%= image_path reservation.shetland.user.photo %>">
+                <%= reservation.shetland.user.first_name.capitalize %>
+                <div class="card-description-shetland">
+                  <%= reservation.shetland.description %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <% end %>

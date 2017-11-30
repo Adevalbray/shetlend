@@ -36,7 +36,7 @@
 <br>
 
 
- <%= link_to 'Show me all the shets!', shets_index_path, class: "btn btn-danger" %>
+ <%= link_to 'Show me all the shets!', shets_path, class: "btn btn-danger" %>
  <%= link_to 'I want to lend my shet!', new_my_shet_path, class: "btn btn-danger" %>
 
 
@@ -45,7 +45,7 @@
   </div>
 
   <div class="container">
-  <center><h2>Latest availabilites ! </h2></center>
+  <center><h2>Latest availabilities ! </h2></center>
   <div class="row">
     <% @shetlands.each do |shetland| %>
       <!-- <div class="cards"> -->

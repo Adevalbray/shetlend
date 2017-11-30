@@ -119,7 +119,7 @@ shetlands_attributes = [
     name: "Puduc",
     price_per_hour: 20,
     age: 6,
-    description: "Malgré ses airs grognons et sa crinière emmêlée, Puduc est un adorable compagnon pour toutes vos sorties à la campagne. Attention : phobique de l'eau et des douches post-balades.",
+    description: "Malgré ses airs grognons et sa crinière emmêlée, Puduc est un adorable compagnon pour toutes vos sorties à la campagne.",
     location: "Camembert",
     remote_photo_url: "http://res.cloudinary.com/dg5e0d3zq/image/upload/v1511863341/loveme.jepg_mmevno.jpg"
   },
