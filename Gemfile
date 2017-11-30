@@ -18,6 +18,8 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'cloudinary'
 gem 'carrierwave',  '~> 1.2'
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
 
 group :development, :test do
   gem 'pry-byebug'

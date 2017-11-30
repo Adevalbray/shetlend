@@ -1,30 +1,46 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-8">
-        <h1> <%= @shetland.name %> </h1>
-        <%= image_tag @shetland.photo, class: "card-header" %>
+    <div class="col-xs-6">
+      <!-- <div class="cards"> -->
         <br>
-        <h2><%= @shetland.location %></h2>
-        <br>
-        <%= @shetland.description %>
-        <br>
-        <%= @shetland.price_per_hour %> € / heure
-        <br>
-        <%= link_to "Réservez", "/reservation.html", class: "btn btn-danger" %>
-    </div>
-
-    <div class="col-xs-4">
-
-      <div class="card-description-owner">
-        <br>
-        <br>
-        <br>
-        <br>
+          <div class="card">
+            <div class="card-header" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path @shetland.photo, height: 300, width: 400, crop: :fill %>')">
+              <div class="row-text">
+                <div class="price">
+                  <span><%= @shetland.price_per_hour %>€</span>
+                </div>
+                <div class="basic-info">
+                  <h3><%= @shetland.name %></h3>
+                  <p><%= @shetland.age %> ans</p>
+                  <div class="row-location">
+                    <p>
+                      <i class="fa fa-map-marker" aria-hidden="true"></i>  <%= @shetland.location %>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-description">
+              <div class="card-description-owner">
                 <img class="card-user" src="<%= image_path @shetland.user.photo %>">
                 <%= @shetland.user.first_name.capitalize %>
-              </div>
-      <br>
+                <div class="card-description-shetland">
+                  <%= @shetland.description %>
+                </div>
 
-    </div>
+            </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-6">
+            <h2>Book this shet!</h2>
+
+            <%= render 'reservations/form', shetland: @shetland, reservation: @reservation %>
+        </div>
+      </div>
+      <!-- </div> -->
   </div>
 </div>
+

@@ -1,0 +1,22 @@
+<%= simple_form_for([ shetland, reservation ], url: shet_reservations_path(shetland)) do |form| %>
+  <%# form.input :start_time %>
+  <div class='input-group date' id='datetimepicker9'>
+    <input name="reservation[start_time]" type='text' class="form-control" />
+    <span class="input-group-addon">
+      <span class="glyphicon glyphicon-calendar"></span>
+    </span>
+  </div>
+  <%= form.input :duration %>
+  <%= form.button :submit %>
+<% end %>
+
+
+<% content_for(:after_js) do %>
+  <script type="text/javascript">
+      $(function () {
+          $('#datetimepicker9').datetimepicker({
+              // viewMode: 'years'
+          });
+      });
+  </script>
+<% end %>

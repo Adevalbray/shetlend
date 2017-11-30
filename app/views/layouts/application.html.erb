@@ -12,6 +12,7 @@
     <%= render 'shared/navbar' %>
     <%= yield %>
     <%= javascript_include_tag 'application' %>
+    <%= yield(:after_js) %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
   </body>
