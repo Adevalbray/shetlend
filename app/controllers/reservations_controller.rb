@@ -1,8 +1,18 @@
 class ReservationsController < ApplicationController
+
   def create
-    @shetland = Shetland.find(params[:shetland_id])
+    @shetland = Shetland.find(params[:shet_id])
     @reservation = Reservation.new(reservation_params)
-    @reservation.shetland = @reservation
+
+    start_time = params[:reservation][:start_time]
+    start_time_string_ruby_style = Time.strptime(start_time, "%m/%d/%Y %I:%M %p").strftime("%Y-%m-%d %I:%M")
+    @reservation.start_time = start_time_string_ruby_style
+
+    #user_id?
+
+    @reservation.shetland = @shetland
+
+    binding.pry
 
     if @reservation.save
       redirect_to reservations_path(@reservation)
@@ -12,8 +22,7 @@ class ReservationsController < ApplicationController
   end
 
     def reservation_params
-    params.require(:reservation).permit(:content)
-  end
-
+      params.require(:reservation).permit(:duration)
+    end
   end
 
