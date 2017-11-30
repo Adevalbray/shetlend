@@ -8,11 +8,8 @@ class ReservationsController < ApplicationController
     start_time_string_ruby_style = Time.strptime(start_time, "%m/%d/%Y %I:%M %p").strftime("%Y-%m-%d %I:%M")
     @reservation.start_time = start_time_string_ruby_style
 
-    #user_id?
-
+    @reservation.user = current_user
     @reservation.shetland = @shetland
-
-    binding.pry
 
     if @reservation.save
       redirect_to reservations_path(@reservation)
