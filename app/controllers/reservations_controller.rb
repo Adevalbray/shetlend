@@ -14,12 +14,20 @@ class ReservationsController < ApplicationController
     if @reservation.save
       redirect_to reservations_path(@reservation)
     else
-      render "shetland/show"
+      render :new
     end
   end
 
-    def reservation_params
-      params.require(:reservation).permit(:duration)
-    end
+  def index
+    @reservations = current_user.reservations
   end
+
+  def reservation_params
+    params.require(:reservation).permit(:duration)
+  end
+
+end
+
+
+
 
