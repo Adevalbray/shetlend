@@ -7,9 +7,9 @@
         <br>
           <div class="card-reservation">
             <div class="order-status">
-              <p class="recap">Récapitulatif de la location</p>
+              <center><p><b>Récapitulatif de la location</b></p></center>
               <p class="status-pending">Status: <%= reservation.status %></p>
-              <p>Prix:</p>
+              <p>Prix:<%= reservation.total_price %></p>
               <p>Durée: <%= reservation.duration %> heures</p>
             </div>
             <br>
