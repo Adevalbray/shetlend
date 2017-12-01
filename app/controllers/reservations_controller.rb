@@ -1,5 +1,4 @@
 class ReservationsController < ApplicationController
-
   def create
     @shetland = Shetland.find(params[:shet_id])
     @reservation = Reservation.new(reservation_params)
@@ -11,10 +10,11 @@ class ReservationsController < ApplicationController
     @reservation.user = current_user
     @reservation.shetland = @shetland
 
+    binding.pry
     if @reservation.save
-      redirect_to reservations_path(@reservation)
+      redirect_to reservations_path
     else
-      render :new
+      render "shets/show"
     end
   end
 
@@ -25,7 +25,6 @@ class ReservationsController < ApplicationController
   def reservation_params
     params.require(:reservation).permit(:duration)
   end
-
 end
 
 
