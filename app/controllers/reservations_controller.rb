@@ -10,7 +10,7 @@ class ReservationsController < ApplicationController
     @reservation.user = current_user
     @reservation.shetland = @shetland
 
-    binding.pry
+    # binding.pry
     if @reservation.save
       redirect_to reservations_path
     else

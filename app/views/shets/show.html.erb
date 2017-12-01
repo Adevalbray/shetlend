@@ -1,9 +1,9 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-6">
+    <div class="col-xs-6 col-sm-4 col-sm-offset-2">
       <!-- <div class="cards"> -->
         <br>
-          <div class="card">
+          <div class="card-shets-show">
             <div class="card-header" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path @shetland.photo, height: 300, width: 400, crop: :fill %>')">
               <div class="row-text">
                 <div class="price">
@@ -23,18 +23,18 @@
             <div class="card-description">
               <div class="card-description-owner">
                 <img class="card-user" src="<%= image_path @shetland.user.photo %>">
-                <%= @shetland.user.first_name.capitalize %>
+                <p><%= @shetland.user.first_name.capitalize %></p>
                 <div class="card-description-shetland">
                   <%= @shetland.description %>
                 </div>
-
             </div>
             </div>
+            <br>
           </div>
         </div>
 
         <div class="row">
-          <div class="col-xs-6">
+          <div class="col-xs-6 col-sm-4">
             <h1>Book this shet!</h1>
 
             <%= render 'reservations/form', shetland: @shetland, reservation: @reservation %>
