@@ -1,3 +1,38 @@
-<h1>My shet</h1>
-
-<%= render "shets/card", shetland: @shetland, description_should_appear: true %>
+<div class="container">
+  <center><h1>My shet</h1></center>
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+      <div class="card">
+  <% if @shetland.photo.url.nil? %>
+    <% photo_path = 'http://res.cloudinary.com/doitabroad/image/upload/v1511967450/logo_ttcvyk.jpg' %>
+  <% else %>
+    <% photo_path = cl_image_path @shetland.photo, height: 300, width: 400, crop: :fill %>
+  <% end %>
+  <div class="card-header" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= photo_path %>')">
+    <div class="row-text">
+      <div class="price">
+        <span><%= @shetland.price_per_hour %>€</span>
+      </div>
+      <div class="basic-info">
+        <h3><%= @shetland.name %></h3>
+        <p><%= @shetland.age %> ans</p>
+        <div class="row-location">
+          <p>
+            <i class="fa fa-map-marker" aria-hidden="true"></i>  <%= @shetland.location %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-description">
+    <div class="card-description-owner">
+      <img class="card-user" src="<%= image_path @shetland.user.photo %>">
+      <p><%= @shetland.user.first_name.capitalize %></p>
+    </div>
+      <p><%= @shetland.description %></p>
+  </div>
+  <div class="card-see-more">
+    <%= link_to 'I want to see all my shets!', my_shets_path, class: "btn btn-danger" %>
+  </div>
+</br>
+</div>

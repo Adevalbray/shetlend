@@ -1,6 +1,13 @@
-<!-- <div class="card"
-  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-         # url('<%= cl_image_path @shetland.photo, height: 300, width: 400, crop: :fill %>')">
+<div class="container">
+  <h1> All my shets </h1>
+  <div class="row">
+    <% @shetlands.each do |shetland| %>
+      <!-- <div class="cards"> -->
+        <div class="col-xs-12 col-sm-4">
+        <%= render "shets/card", shetland: shetland, description_should_appear: true %>
+        </div>
+      <!-- </div> -->
+    <% end %>
+  </div>
 </div>
 
- -->

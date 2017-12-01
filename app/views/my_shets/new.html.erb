@@ -4,7 +4,9 @@
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
       <div class="card-form-new-shet">
-      <h1> Ajoutez votre Shetland !</h1>
+      <center><h1> Ajoutez votre Shetland !</h1>
+        <img src="http://res.cloudinary.com/dqsyulth5/image/upload/c_scale,w_199/v1512135425/99_85283_h3qlgg.png" alt="Unicorn"></center>
+
       <br>
       <%= simple_form_for([ @shetland ], url: my_shets_path(@shetland)) do |form| %>
       <%# form.input :start_time %>
@@ -15,7 +17,7 @@
       <%= form.input :location %>
       <%= form.input :photo %>
       <%= form.input :photo_cache, as: :hidden %>
-      <div class="col-sm-offset-3">
+      <div class="col-sm-offset-4">
       <%= form.button :submit %>
       </div>
       <% end %>
