@@ -1,6 +1,6 @@
 class MyShetsController < ApplicationController
   def index
-    @shetlands = Shetland.all
+    @shetlands = current_user.shetlands
   end
 
   # def details
@@ -26,6 +26,6 @@ class MyShetsController < ApplicationController
   end
 
   def shetland_params
-    params.require(:shetland).permit(:name, :price_per_hour, :photo, :photo_cache, :location)
+    params.require(:shetland).permit(:name, :price_per_hour, :photo, :photo_cache, :location, :description)
   end
 end
