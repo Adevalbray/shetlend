@@ -10,8 +10,8 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Rent a pony", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Reservations", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Rent a pony", new_my_shet_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Reservations", reservations_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Requests", "#", class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Avatar with dropdown menu -->

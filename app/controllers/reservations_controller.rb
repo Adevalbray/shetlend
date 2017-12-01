@@ -10,6 +10,10 @@ class ReservationsController < ApplicationController
     @reservation.user = current_user
     @reservation.shetland = @shetland
 
+    @reservation.status = "pending"
+
+    @reservation.total_price = @shetland.price_per_hour * @reservation.duration
+
     # binding.pry
     if @reservation.save
       redirect_to reservations_path
@@ -24,6 +28,11 @@ class ReservationsController < ApplicationController
 
   def reservation_params
     params.require(:reservation).permit(:duration)
+  end
+
+  def total_price(price_per_hour, duration)
+    total_price = 0
+    total_price = price_per_hour * duration
   end
 end
 
