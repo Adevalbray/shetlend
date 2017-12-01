@@ -26,6 +26,6 @@ class MyShetsController < ApplicationController
   end
 
   def shetland_params
-    params.require(:shetland).permit(:name, :price_per_hour, :photo, :photo_cache)
+    params.require(:shetland).permit(:name, :price_per_hour, :photo, :photo_cache, :location)
   end
 end
