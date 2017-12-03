@@ -1,3 +1,18 @@
+<<<<<<< HEAD
+=======
+<div class="container">
+  <h1> All my shets </h1>
+  <div class="row">
+    <% @shetlands.each do |shetland| %>
+      <!-- <div class="cards"> -->
+        <div class="col-xs-12 col-sm-4">
+        <%= render "shets/card", shetland: shetland, description_should_appear: true %>
+        </div>
+      <!-- </div> -->
+    <% end %>
+  </div>
+</div>
+>>>>>>> b15f220ecdeb95c0676dc4c8b0a6466498aa8a10
 
 <h1>Gérer mes Shetlands</h1>
 

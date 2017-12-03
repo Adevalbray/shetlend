@@ -5,13 +5,17 @@
     <div class="col-xs-12 col-sm-4">
       <!-- <div class="cards"> -->
         <br>
-          <div class="card">
+          <div class="card-reservation">
             <div class="order-status">
-              <p class="recap">Récapitulatif de la location</p>
-              <p class="status-pending"> <%= reservation.status %></p>
-              <p>Prix:</p>
+              <center><p><b>Récapitulatif de la location</b></p></center>
+              <p class="status-pending">Status: <%= reservation.status %></p>
+              <p>Prix total: <%= reservation.total_price %> €</p>
+              <p class="arnaud-message">Message automatique du locataire: "Sorry j'ai la gastro je ne peux pas répondre à vos demandes avant le 5 décembre"</p>
               <p>Durée: <%= reservation.duration %> heures</p>
             </div>
+            <br>
+            <div class="card-reservation-shetland">
+
             <div class="card-header" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path reservation.shetland.photo, height: 300, width: 400, crop: :fill %>')">
               <div class="row-text">
                 <div class="price">
@@ -37,6 +41,7 @@
                   <%= reservation.shetland.description %>
                 </div>
               </div>
+            </div>
             </div>
           </div>
         </div>

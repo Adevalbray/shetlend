@@ -11,7 +11,7 @@ class MyShetsController < ApplicationController
      @shetland.user = current_user
 
     if @shetland.save
-      redirect_to my_shets_path(@shetland)
+      redirect_to my_shet_path(@shetland)
     else
       render "myshets/new"
     end
@@ -26,7 +26,11 @@ class MyShetsController < ApplicationController
     @shetland = Shetland.new
   end
 
+  def show
+    @shetland = Shetland.find(params[:id])
+  end
+
   def shetland_params
-    params.require(:shetland).permit(:name, :price_per_hour, :photo, :photo_cache)
+    params.require(:shetland).permit(:name, :price_per_hour, :photo, :photo_cache, :location, :description)
   end
 end

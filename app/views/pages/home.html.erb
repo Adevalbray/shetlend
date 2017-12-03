@@ -16,28 +16,28 @@
       <h1>Shetlend</h1>
       <p>Loue ton poney à l'heure!</p>
 
-  <div class="container">
-      <div class="row">
-        <div class="col-sm-6 col-sm-offset-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6 col-sm-offset-3">
             <div id="imaginary_container">
-                <div class="input-group stylish-input-group">
-                    <input type="text" class="form-control"  placeholder="Search" >
-                    <span class="input-group-addon">
-                        <button type="submit">
-                            <span class="glyphicon glyphicon-search"></span>
-                        </button>
-                    </span>
-                </div>
+              <div class="input-group stylish-input-group">
+                <input type="text" class="form-control"  placeholder="Search" >
+                <span class="input-group-addon">
+                  <button type="submit">
+                    <span class="glyphicon glyphicon-search"></span>
+                  </button>
+                </span>
+              </div>
             </div>
+          </div>
         </div>
-  </div>
-</div>
+      </div>
 
-<br>
+      <br>
 
 
- <%= link_to 'Show me all the shets!', shets_path, class: "btn btn-danger" %>
- <%= link_to 'I want to lend my shet!', new_my_shet_path, class: "btn btn-danger" %>
+      <%= link_to 'Show me all the shets!', shets_path, class: "btn btn-danger" %>
+      <%= link_to 'I want to lend my shet!', new_my_shet_path, class: "btn btn-danger" %>
 
 
 
@@ -45,22 +45,23 @@
   </div>
 
   <div class="container">
-  <center><h2>Latest availabilities ! </h2></center>
-  <div class="row">
-    <% @shetlands.each do |shetland| %>
+    <center><h2>Latest availabilities ! </h2></center>
+    <div class="row">
+      <% @shetlands.each do |shetland| %>
       <!-- <div class="cards"> -->
         <div class="col-xs-12 col-sm-4">
-          <%= render "shets/card", shetland: shetland %>
+          <%= render "shets/card", shetland: shetland, description_should_appear: true %>
         </div>
-      <!-- </div> -->
-    <% end %>
-  </div>
-</div>
+
+        <!-- </div> -->
+        <% end %>
+      </div>
+    </div>
 
 
 
-    </body>
-    </html>
+  </body>
+  </html>
 
 
 
