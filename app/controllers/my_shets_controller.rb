@@ -1,6 +1,6 @@
 class MyShetsController < ApplicationController
   def index
-    @shetlands = Shetland.all
+    @shetlands = current_user.shetlands
   end
 
   # def details
@@ -16,6 +16,11 @@ class MyShetsController < ApplicationController
       render "myshets/new"
     end
   end
+
+  # def show
+  #   @shetland = Shetland.find(params[:id])
+
+  # end
 
   def new
     @shetland = Shetland.new
